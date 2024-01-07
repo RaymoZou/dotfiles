@@ -28,6 +28,9 @@ require("lazy").setup({
 		end,
 	},
 
+	-- commenting
+	{ "numToStr/Comment.nvim" },
+
 	-- lsp-zero.nvim
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
@@ -57,12 +60,12 @@ require("lazy").setup({
 
 require("mason").setup()
 require("mason-lspconfig").setup()
-
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 	},
 })
+require("Comment").setup()
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
