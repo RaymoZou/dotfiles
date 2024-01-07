@@ -74,7 +74,12 @@ require("Comment").setup()
 local cmp = require("cmp")
 require("cmp").setup({
 	mapping = cmp.mapping.preset.insert({
-		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<Tab>"] = function()
+			if (cmp.visible()) then
+				cmp.select_next_item()
+			end
+		end,
 	}),
 	sources = {
 		{ name = "buffer" },
