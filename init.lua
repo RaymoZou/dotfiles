@@ -1,3 +1,5 @@
+print("hello")
+
 vim.g.maplocalleader = " "
 vim.keymap.set("i", "kj", "<Esc>")
 
@@ -31,19 +33,23 @@ require("lazy").setup({
 
 	-- commenting
 	{ "numToStr/Comment.nvim" },
+	{ "nvim-lualine/lualine.nvim" },
 
-	{ "hrsh7th/nvim-cmp" }, -- completion plugin
-
-	-- completion sources
-	{ "hrsh7th/cmp-buffer" }, -- buffer completions
-	{ "hrsh7th/cmp-path" }, -- buffer completions
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-buffer", -- buffer completions
+			"hrsh7th/cmp-path", -- buffer completions
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+		},
+	},
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "neovim/nvim-lspconfig" },
+	-- { "L3MON4D3/LuaSnip" },
 
 	{ "williamboman/mason.nvim" },
-	-- { "williamboman/mason-lspconfig.nvim" },
-	-- { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-	-- { "neovim/nvim-lspconfig" },
-	-- { "hrsh7th/cmp-nvim-lsp" },
-	-- { "L3MON4D3/LuaSnip" },
+	{ "williamboman/mason-lspconfig.nvim" },
 
 	-- conform (for formatting)
 	{
@@ -64,24 +70,32 @@ require("lazy").setup({
 })
 
 require("mason").setup()
--- require("mason-lspconfig").setup()
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 	},
 })
 require("Comment").setup()
+
 local cmp = require("cmp")
-require("cmp").setup({
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+		end,
+	},
 	mapping = cmp.mapping.preset.insert({
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
-		["<Tab>"] = function()
-			if (cmp.visible()) then
+		["<Tab>"] = function(fallback)
+			if cmp.visible() then
 				cmp.select_next_item()
+			else
+				fallback()
 			end
 		end,
 	}),
 	sources = {
+		{ name = "nvim_lsp" },
 		{ name = "buffer" },
 		{ name = "path" },
 	},
@@ -93,3 +107,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		require("conform").format({ bufnr = args.buf })
 	end,
 })
+
+require("lspconfig").lua_ls.setup({})
