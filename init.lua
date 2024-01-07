@@ -1,9 +1,10 @@
-vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set("i", "kj", "<Esc>")
 
 -- show lines
 vim.cmd.set("number")
+vim.cmd.set("relativenumber")
+vim.api.nvim_set_option("clipboard", "unnamed") -- global clipboard
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -31,14 +32,18 @@ require("lazy").setup({
 	-- commenting
 	{ "numToStr/Comment.nvim" },
 
-	-- lsp-zero.nvim
+	{ "hrsh7th/nvim-cmp" }, -- completion plugin
+
+	-- completion sources
+	{ "hrsh7th/cmp-buffer" }, -- buffer completions
+	{ "hrsh7th/cmp-path" }, -- buffer completions
+
 	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-	{ "neovim/nvim-lspconfig" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/nvim-cmp" },
-	{ "L3MON4D3/LuaSnip" },
+	-- { "williamboman/mason-lspconfig.nvim" },
+	-- { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+	-- { "neovim/nvim-lspconfig" },
+	-- { "hrsh7th/cmp-nvim-lsp" },
+	-- { "L3MON4D3/LuaSnip" },
 
 	-- conform (for formatting)
 	{
@@ -59,13 +64,23 @@ require("lazy").setup({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+-- require("mason-lspconfig").setup()
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 	},
 })
 require("Comment").setup()
+local cmp = require("cmp")
+require("cmp").setup({
+	mapping = cmp.mapping.preset.insert({
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	}),
+	sources = {
+		{ name = "buffer" },
+		{ name = "path" },
+	},
+})
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*",
