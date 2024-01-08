@@ -26,31 +26,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- commenting
-	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-	},
-	{ "nvim-lualine/lualine.nvim" },
-
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("lspconfig").lua_ls.setup({})
-		end,
-	},
-
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	},
-	{ "williamboman/mason-lspconfig.nvim" },
-
 	-- treesitter
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
