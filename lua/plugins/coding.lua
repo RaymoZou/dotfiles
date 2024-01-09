@@ -12,6 +12,7 @@ return {
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
+	{ "folke/neodev.nvim", opts = {} },
 	-- formatter
 	{
 		"stevearc/conform.nvim",
