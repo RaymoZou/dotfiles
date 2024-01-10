@@ -1,5 +1,6 @@
 require("options")
 
+-- TODO: create separte module for global keybindings
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set("i", "kj", "<Esc>")

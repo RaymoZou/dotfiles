@@ -1,7 +1,15 @@
 -- set up lsp and lsp related features here
 require("mason").setup()
-require("mason-lspconfig").setup()
-require("lspconfig").lua_ls.setup({})
+require("mason-lspconfig").setup({
+	ensure_installed = { "lua_ls", "clangd", "tsserver" },
+})
+
+-- current appraoch is to setup each language server individually with lspconfig
+-- future TODO: setup automatic server setup with mason-lspconfig?
+local lspconfig = require("lspconfig")
+lspconfig.lua_ls.setup({})
+lspconfig.tsserver.setup({})
+lspconfig.clangd.setup({})
 
 -- autocompletion set up
 local cmp = require("cmp")
