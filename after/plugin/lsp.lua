@@ -1,18 +1,48 @@
 -- set up lsp and lsp related features here
 require("mason").setup()
+require("neodev").setup()
+
+local servers = { -- lspconfig server names (add servers here as needed)
+	lua_ls = {
+		Lua = { workspace = { checkThirdParty = false }, telemetry = { enable = false } },
+	},
+	clangd = {},
+	tsserver = {},
+}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+-- function taken form kickstart.nvim [https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua]
+local on_attach = function(_, bufnr)
+	local ts_builtin = require("telescope.builtin")
+	vim.keymap.set("n", "gd", ts_builtin.lsp_definitions, { buffer = bufnr, desc = "Go to Definition" })
+	vim.keymap.set("n", "gd", ts_builtin.lsp_definitions, { buffer = bufnr, desc = "Go to Definition" })
+	vim.keymap.set("n", "gr", ts_builtin.lsp_references, { buffer = bufnr, desc = "Go to References" })
+	-- TODO: format with lsp using an autocmd instead of conform.nvim
+	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+		vim.lsp.buf.format()
+	end, { desc = "Format current buffer with LSP" })
+end
+
+local handler = {
+	function(server_name)
+		require("lspconfig")[server_name].setup({
+			on_attach = on_attach,
+			settings = servers[server_name],
+			filetypes = (servers[server_name] or {}).filetypes,
+			capabilities = capabilties,
+		})
+	end,
+}
+
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "tsserver" },
+	ensure_installed = servers,
+	handlers = handler,
 })
 
--- current appraoch is to setup each language server individually with lspconfig
--- future TODO: setup automatic server setup with mason-lspconfig?
-local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup({})
-lspconfig.tsserver.setup({})
-lspconfig.clangd.setup({})
-
--- autocompletion set up
+-- autocompletion setup
 local cmp = require("cmp")
+-- TODO: add max number of autocomplete suggestions
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -31,7 +61,7 @@ cmp.setup({
 	}),
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "buffer" },
+		{ name = "luasnip" },
 		{ name = "path" },
 	},
 })
