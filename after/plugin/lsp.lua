@@ -18,10 +18,7 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "gd", ts_builtin.lsp_definitions, { buffer = bufnr, desc = "Go to Definition" })
 	vim.keymap.set("n", "gd", ts_builtin.lsp_definitions, { buffer = bufnr, desc = "Go to Definition" })
 	vim.keymap.set("n", "gr", ts_builtin.lsp_references, { buffer = bufnr, desc = "Go to References" })
-	-- TODO: format with lsp using an autocmd instead of conform.nvim
-	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-		vim.lsp.buf.format()
-	end, { desc = "Format current buffer with LSP" })
+	vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format with LSP" })
 end
 
 local handler = {
