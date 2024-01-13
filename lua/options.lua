@@ -19,4 +19,5 @@ vim.o.smartindent = true
 vim.o.termguicolors = true
 vim.o.scrolloff = 8
 vim.o.updatetime = 50
-vim.o.wrap = false;
+vim.o.wrap = false
+vim.o.breakindent = true
