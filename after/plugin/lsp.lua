@@ -1,6 +1,7 @@
 -- set up lsp and lsp related features here
 require("mason").setup()
 require("neodev").setup()
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local servers = { -- lspconfig server names (add servers here as needed)
 	lua_ls = {
