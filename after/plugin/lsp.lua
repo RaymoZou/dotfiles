@@ -2,6 +2,7 @@
 require("mason").setup()
 require("neodev").setup()
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip").filetype_extend("javascript", { "html" })
 
 local servers = { -- lspconfig server names (add servers here as needed)
 	lua_ls = {

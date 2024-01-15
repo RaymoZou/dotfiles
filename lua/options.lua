@@ -15,6 +15,7 @@ vim.o.autochdir = true -- not sure if I want to keep these settings yet
 vim.g.netrw_keepdir = 0
 
 vim.o.smartindent = true
+vim.o.autoindent = true
 
 vim.o.termguicolors = true
 vim.o.scrolloff = 8
