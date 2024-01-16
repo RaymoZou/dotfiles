@@ -1,3 +1,10 @@
+-- keybinds
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+vim.keymap.set("i", "kj", "<Esc>")
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
+
 vim.o.relativenumber = true
 vim.o.number = true
 
