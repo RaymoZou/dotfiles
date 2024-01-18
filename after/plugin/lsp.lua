@@ -19,6 +19,7 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "gd", ts_builtin.lsp_definitions, { buffer = bufnr, desc = "Go to Definition" })
 	vim.keymap.set("n", "gr", ts_builtin.lsp_references, { buffer = bufnr, desc = "Go to References" })
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Hover" })
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr, desc = "Rename" })
 	vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format with LSP" })
 end
 
@@ -26,6 +27,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local handler = {
 	function(server_name)
 		require("lspconfig")[server_name].setup({
+			autostart = true,
 			on_attach = on_attach,
 			settings = servers[server_name],
 			filetypes = (servers[server_name] or {}).filetypes,
