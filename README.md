@@ -9,3 +9,6 @@ This is my personal Neovim config that uses Lazy.vim as a package manager. It is
 ## Things I Want In The Future
 - A way to sync the current Netrw directory with the current working directory
 - Plugin to visualize and operate git commands (this would probably be fugitive.nvim?)
+
+## Todo:
+- Add intellisense autocompletetion for Luarock modules (works for Node?)
