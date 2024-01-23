@@ -1,4 +1,7 @@
 -- treesitter config
+--
+-- use Cclang compiler to compile C/C++ parsers
+require 'nvim-treesitter.install'.compilers = { "clang" }
 require("nvim-treesitter.configs").setup({
 	-- add languages here as necessary
 	ensure_installed = { "c", "lua", "rust" },
