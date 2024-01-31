@@ -1,5 +1,5 @@
 # Neovim Config
-This is my personal Neovim config that uses Lazy.vim as a package manager. It is currently a work in progress as I try to figure out which plugins I will need and how to configure them for the features I want to have. The general structure of the config conists of external plugins located in `lua/plugins` and their configurations in `after/plugin` with the idea being that all the plugins are configured *after* they are loaded.
+This is my personal Neovim config that uses Lazy.vim as a package manager. It is currently a work in progress as I try to figure out which plugins I will need and how to configure them for the features I want to have. The general structure of the config conists of external plugins located in `lua/plugins` and their configurations in `after/plugin` with the idea being that all the plugins are configured *after* they are loaded. Neovim packages can be easily added or edited in the `lua` directory and configured in the `after` directory.
 
 ## Features
 - Tokyonight color theme
@@ -8,7 +8,6 @@ This is my personal Neovim config that uses Lazy.vim as a package manager. It is
 
 ## Things I Want In The Future
 - A way to sync the current Netrw directory with the current working directory
-- Plugin to visualize and operate git commands (this would probably be fugitive.nvim?)
 
 ## Todo:
 - Add intellisense autocompletetion for Luarock modules (works for Node?)
