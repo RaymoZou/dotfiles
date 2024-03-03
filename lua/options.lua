@@ -25,6 +25,7 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.autochdir = true
 vim.g.netrw_keepdir = 0
+vim.o.showmode = false -- not needed, have lualine for this
 
 vim.o.smartindent = true
 vim.o.autoindent = true
