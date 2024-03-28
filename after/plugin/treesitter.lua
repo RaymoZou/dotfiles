@@ -1,7 +1,7 @@
 -- treesitter config
 --
--- use Cclang compiler to compile C/C++ parsers
-require 'nvim-treesitter.install'.compilers = { "clang" }
+-- treesitter compilers
+require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
 
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
