@@ -35,6 +35,7 @@ vim.o.scrolloff = 8
 vim.o.updatetime = 50
 vim.o.wrap = false
 vim.o.breakindent = true
+vim.o.guicursor = "v-i-n-c:block" -- TODO: change color based on mode
 
 -- remaps (thanks ThePrimeAgen)
 vim.keymap.set("i", "kj", "<Esc>")
