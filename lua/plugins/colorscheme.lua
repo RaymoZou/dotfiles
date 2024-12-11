@@ -1,22 +1,33 @@
--- various color schemes with onedark loaded by default
+-- various color schemes with catppuccin loaded by default
 
 return {
     {
-        "navarasu/onedark.nvim",
-        -- priority = 1000,
-        -- config = function()
-        --     require("onedark").setup({
-        --         style = "darker",
-        --     })
-        --     require("onedark").load()
-        -- end,
+        {
+            "navarasu/onedark.nvim",
+            name = "onedark",
+            lazy = false,
+            priority = 1000
+        },
+        {
+            "folke/tokyonight.nvim",
+            name = "tokyonight",
+            lazy = false,
+            priority = 1000
+        },
+        {
+            "catppuccin/nvim",
+            name = "catppuccin",
+            lazy = false,
+            priority = 1000,
+            init = function()
+                vim.cmd.colorscheme("catppuccin")
+            end,
+        },
     },
-    { "folke/tokyonight.nvim" }, -- tokyonight-{night, storm, day, moon}
     {
-        "catppuccin/nvim",
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme "catppuccin"
-        end,
-    } -- catppucin-{latte, frappe, macchiato, mocha}
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
+        lazy = false,
+        priority = 1000
+    },
 }
