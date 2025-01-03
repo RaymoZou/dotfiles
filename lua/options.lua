@@ -41,5 +41,7 @@ vim.o.guicursor = "v-i-n-c:block,a:blinkwait700-blinkoff400-blinkon250" -- TODO:
 vim.keymap.set("i", "kj", "<Esc>")
 vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "n", "nzz") -- page centering
+vim.keymap.set("n", "N", "Nzz") -- page centering
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
