@@ -6,7 +6,7 @@ vim.o.relativenumber = true
 vim.o.number = true
 
 -- incremental search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.o.incsearch = true
 
 -- indent settings
