@@ -5,10 +5,12 @@ This is my personal Neovim config that uses Lazy.vim as a package manager. It is
 | Keys | Actions |
 |-----------------|------------------|
 | `kj` | Normal mode |
-| `Space` + `G`  | Grep search |
+| `Space` + `sg`  | Grep search |
 | `Space` + `sG`  | Grep search in current Git directory |
 | `Space` + `?`  | Recently opened files |
 | `Space` + `pv` | :Ex |
+| `Space` + `sf` | Search files in current Git directory |
+| `Space` + `sh` | Search help files |
 
 ## Features
 - Autocompletion based on sourced with LSP support
