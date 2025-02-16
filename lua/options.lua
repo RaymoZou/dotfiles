@@ -46,3 +46,4 @@ vim.keymap.set("n", "n", "nzz") -- page centering
 vim.keymap.set("n", "N", "Nzz") -- page centering
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- clear highlight on search
