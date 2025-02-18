@@ -43,4 +43,4 @@ vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp f
 vim.keymap.set("n", "<leader>cs", function()
     builtin.colorscheme({ enable_preview = true })
 end, { desc = "[C]olor [S]chemes" })
-vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "Recently Opened Files" })
+vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, { desc = "Recently Opened Files" })
