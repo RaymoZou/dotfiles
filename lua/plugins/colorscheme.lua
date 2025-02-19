@@ -19,15 +19,15 @@ return {
             name = "catppuccin",
             lazy = false,
             priority = 1000,
+        },
+        {
+            "bluz71/vim-moonfly-colors",
+            name = "moonfly",
+            lazy = false,
+            priority = 1000,
             init = function()
-                vim.cmd.colorscheme("catppuccin")
+                vim.cmd.colorscheme("moonfly")
             end,
         },
-    },
-    {
-        "bluz71/vim-moonfly-colors",
-        name = "moonfly",
-        lazy = false,
-        priority = 1000
     },
 }
