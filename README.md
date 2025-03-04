@@ -11,6 +11,7 @@ This is my personal Neovim config that uses Lazy.vim as a package manager. It is
 | `Space` + `pv` | :Ex |
 | `Space` + `sf` | Search files in current Git directory |
 | `Space` + `sh` | Search help files |
+| `Space` + `cs` | List available colorschemes using Telescope |
 
 ## Features
 - Autocompletion based on sourced with LSP support
