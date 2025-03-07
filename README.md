@@ -5,9 +5,8 @@ This is my personal Neovim config that uses Lazy.vim as a package manager. It is
 | Keys | Actions |
 |-----------------|------------------|
 | `kj` | Normal mode |
-| `Space` + `sg`  | Grep search |
-| `Space` + `sG`  | Grep search in current Git directory |
-| `Space` + `?`  | Recently opened files |
+| `Space` + `sg`  | Grep search in Git directory (or current working directory if Git directory not found)|
+| `Space` + `Space  | Recently opened files |
 | `Space` + `pv` | :Ex |
 | `Space` + `sf` | Search files in current Git directory |
 | `Space` + `sh` | Search help files |
