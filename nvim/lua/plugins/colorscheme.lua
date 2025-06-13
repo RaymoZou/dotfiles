@@ -19,6 +19,9 @@ return {
             name = "catppuccin",
             lazy = false,
             priority = 1000,
+            opts = {
+                transparent_background = true
+            },
         },
         {
             "bluz71/vim-moonfly-colors",
