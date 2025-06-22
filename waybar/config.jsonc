@@ -40,7 +40,7 @@
         "format-alt": "{:%a, %d. %b  %H:%M}"
     },
     "wireplumber": {
-        "format": "wireplumber: {volume}%",
+        "format": "volume: {volume}%",
         "format-muted": "",
         "on-click": "helvum",
         "max-volume": 150,
