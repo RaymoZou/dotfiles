@@ -4,3 +4,4 @@ size = 14.0
 [window]
 opacity = 0.8
 blur = true
+padding = {x = 20, y = 20}
