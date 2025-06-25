@@ -1,5 +1,8 @@
 # About
-Just some of my configurations for hyprland, wayland, neovim & more...
+Just some of my configurations for...
+- hyprland
+- waybar
+- neovim
 
 ## Neovim Config
 This is my personal Neovim config that uses Lazy.vim as a package manager. It is currently a work in progress as I try to figure out which plugins I will need and how to configure them for the features I want to have. The general structure of the config consists of external plugins located in `lua/plugins` and their configurations in `after/plugin` with the idea being that all the plugins are configured *after* they are loaded. Neovim packages can be easily added or edited in the `lua` directory and configured in the `after` directory.
