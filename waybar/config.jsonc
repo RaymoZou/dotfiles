@@ -42,7 +42,6 @@
     "wireplumber": {
         "format": "volume: {volume}%",
         "format-muted": "",
-        "on-click": "helvum",
         "max-volume": 150,
         "scroll-step": 0.2
     }
