@@ -14,19 +14,25 @@
         "wireplumber",
         "backlight"
     ],
-
     // modules
     "hyprland/window": {
         "max-length": 50
     },
     "backlight": {
-        "format": "backlight: {percent}"
+        "format": "󰃠{percent}",
+        "format-icons": [
+            "󰃞",
+            "󰃝",
+            "󰃟",
+            "󰃠"
+        ]
     },
     "network": {
-        "format": "wifi: {essid}"
+        "format": "<span>󰤨</span> {essid}",
+        "format-disconnected": "<span>󱘖</span> disconnected"
     },
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{icon} {capacity}%",
         "format-icons": [
             "",
             "",
@@ -36,11 +42,16 @@
         ]
     },
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": " {:%I:%M %p}",
         "format-alt": "{:%a, %d. %b  %H:%M}"
     },
     "wireplumber": {
-        "format": "volume: {volume}%",
+        "format": "{icon} {volume}%",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         "format-muted": "",
         "max-volume": 150,
         "scroll-step": 0.2
