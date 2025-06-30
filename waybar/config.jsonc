@@ -23,7 +23,7 @@
         "format": "backlight: {percent}"
     },
     "network": {
-        "format": "{essid}"
+        "format": "wifi: {essid}"
     },
     "battery": {
         "format": "{capacity}% {icon}",
