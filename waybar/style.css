@@ -1,7 +1,10 @@
+/* import catppuccin colors */
+@import "macchiato.css";
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: JetBrains Mono, FantasqueSansM Nerd Font, monospace, sans-serif;
+    font-size: 14px;
 }
 
 window#waybar {
@@ -95,7 +98,6 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
 }
 
 #window,
@@ -103,26 +105,34 @@ button:hover {
     margin: 0 4px;
 }
 
+.module {
+    margin: 4px;
+    border-radius: 4px;
+    padding: 4px;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
     margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
+.modules-right>widget:last-child>#workspaces {
     margin-right: 0;
 }
 
 #clock {
-    background-color: #64727D;
-}
-
-#battery {
-    background-color: #ffffff;
+    background-color: @teal;
     color: #000000;
 }
 
-#battery.charging, #battery.plugged {
+#battery {
+    background-color: @sapphire;
+    color: #000000;
+}
+
+#battery.charging,
+#battery.plugged {
     color: #ffffff;
     background-color: #26A65B;
 }
@@ -182,11 +192,13 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: @lavender;
+    color: #000000;
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: @flamingo;
+    color: #000000;
 }
 
 #network.disconnected {
@@ -194,8 +206,8 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: @yellow;
+    color: #ffffff;
 }
 
 #pulseaudio.muted {
@@ -238,11 +250,11 @@ label:focus {
     background-color: #2980b9;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
@@ -289,11 +301,11 @@ label:focus {
     min-width: 16px;
 }
 
-#keyboard-state > label {
+#keyboard-state>label {
     padding: 0 5px;
 }
 
-#keyboard-state > label.locked {
+#keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -302,7 +314,7 @@ label:focus {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #privacy {

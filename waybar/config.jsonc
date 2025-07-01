@@ -19,7 +19,7 @@
         "max-length": 50
     },
     "backlight": {
-        "format": "󰃠{percent}",
+        "format": "{icon} {percent}",
         "format-icons": [
             "󰃞",
             "󰃝",
