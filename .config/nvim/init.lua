@@ -16,3 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ import = "plugins" },
 })
+
+ vim.diagnostic.config( {
+    virtual_text = true,
+    float = {border = "rounded"}
+})
