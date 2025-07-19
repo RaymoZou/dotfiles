@@ -21,7 +21,6 @@ This is my personal Neovim config that uses Lazy.vim as a package manager. It is
 | `Space` + `sh` | Search help files |
 | `Space` + `cs` | List available colorschemes using Telescope |
 
-
 ### Features
 - Hyprland dynamic window manager
 - Waybar for basic system information such as time, network and battery
@@ -35,3 +34,6 @@ This is my personal Neovim config that uses Lazy.vim as a package manager. It is
 
 ### Things I Want In The Future
 - A plugin that allows me to navigate between buffers easily
+
+### Setup:
+- Create a directory in `$HOME/wallpapers` to store wallpapers for hyprpaper
