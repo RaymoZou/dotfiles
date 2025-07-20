@@ -1,34 +1,31 @@
 return {
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-buffer", -- buffer completions
-			"hrsh7th/cmp-path", -- buffer completions
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
-		},
-	},
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "neovim/nvim-lspconfig" },
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "folke/neodev.nvim", opts = {} },
-	-- commenting
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup({
-				pre_hook = function()
-					return vim.bo.commentstring
-				end,
-			})
-		end,
-	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		opts = {}, -- this is equalent to setup({}) function
-	},
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
+    },
+    { -- autocompletion --
+        'saghen/blink.cmp',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            keymap = { preset = 'default', },
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
+            },
+
+            fuzzy = { implementation = "lua" }
+        },
+        opts_extend = { "sources.default" }
+    },
+    { 'numToStr/Comment.nvim', opts = {} }, {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
+},
 }
