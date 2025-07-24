@@ -1,0 +1,17 @@
+* {
+    background-color: rgba(1, 1, 1, 0.1);
+    font-size: 1.5rem;
+};
+
+#input {
+    padding: 8px;
+}
+
+#entry {
+    font-weight: bold;
+    padding: 16px;
+};
+
+#entry:selected {
+    border: solid white 1px;
+}
