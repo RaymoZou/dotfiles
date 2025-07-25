@@ -12,7 +12,8 @@
         "clock",
         "network",
         "wireplumber",
-        "backlight"
+        "backlight",
+        "bluetooth"
     ],
     // modules
     "hyprland/window": {
@@ -55,5 +56,9 @@
         "format-muted": "",
         "max-volume": 150,
         "scroll-step": 0.2
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
     }
 }

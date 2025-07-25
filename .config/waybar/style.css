@@ -155,6 +155,11 @@ button:hover {
     animation-direction: alternate;
 }
 
+#bluetooth {
+    background-color: @sapphire;
+    color: black;
+}
+
 #power-profiles-daemon {
     padding-right: 15px;
 }
