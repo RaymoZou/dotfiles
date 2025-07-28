@@ -1,2 +1,4 @@
 width=40%
 prompt=program
+show=drun
+allow_images=true
