@@ -1,9 +1,11 @@
 # About
 Just some of my dots for...
 - hyprland
+- hyprpaper
 - waybar
 - neovim
 - tmux
+- alacritty
 
 It may be easier to copy and paste each file as needed - otherwise, check out [this](https://news.ycombinator.com/item?id=11071754) Hacker News article on a neat approach to tracking your dots.
 
