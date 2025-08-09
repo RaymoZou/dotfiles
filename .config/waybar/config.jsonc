@@ -13,11 +13,15 @@
         "network",
         "wireplumber",
         "backlight",
-        "bluetooth"
+        "bluetooth",
+        "memory"
     ],
     // modules
     "hyprland/window": {
         "max-length": 50
+    },
+    "memory": {
+        "format": " {used} / {total} GiB",
     },
     "backlight": {
         "format": "{icon} {percent}",
@@ -30,7 +34,8 @@
     },
     "network": {
         "format": "<span>󰤨</span> {essid}",
-        "format-disconnected": "<span>󱘖</span> disconnected"
+        "format-disconnected": "<span>󱘖</span> disconnected",
+        "max-length": 15
     },
     "battery": {
         "format": "{icon} {capacity}%",

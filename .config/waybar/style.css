@@ -4,7 +4,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrains Mono, FantasqueSansM Nerd Font, monospace, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 window#waybar {
@@ -17,6 +17,10 @@ window#waybar {
 
 window#waybar.hidden {
     opacity: 0.2;
+}
+
+memory {
+    color: black;
 }
 
 /*
@@ -102,7 +106,7 @@ button:hover {
 
 #window,
 #workspaces {
-    margin: 0 4px;
+    margin: 4px;
 }
 
 .module {
