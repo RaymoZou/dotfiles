@@ -19,10 +19,6 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-memory {
-    color: black;
-}
-
 /*
 window#waybar.empty {
     background-color: transparent;
@@ -113,6 +109,7 @@ button:hover {
     margin: 4px;
     border-radius: 4px;
     padding: 4px;
+    color: #000000;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -161,7 +158,6 @@ button:hover {
 
 #bluetooth {
     background-color: @sapphire;
-    color: black;
 }
 
 #power-profiles-daemon {
