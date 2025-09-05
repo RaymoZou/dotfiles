@@ -100,7 +100,11 @@ button:hover {
     padding: 0 10px;
 }
 
-#window,
+#window {
+    color: #ffffff;
+    font-weight: bold;
+}
+
 #workspaces {
     margin: 4px;
 }
