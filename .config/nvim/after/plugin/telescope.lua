@@ -35,8 +35,13 @@ end
 
 vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
+local function git_files()
+    require('telescope.builtin').find_files({ cwd = find_git_root() })
+end
 
-vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
+
+
+vim.keymap.set("n", "<leader>sf", git_files, { desc = 'search for git files' })
 vim.keymap.set('n', '<leader>sg', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' }) -- based on current git root OR cwd if not found
 vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffers" })
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp files" })
