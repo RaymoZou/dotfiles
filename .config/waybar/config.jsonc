@@ -65,6 +65,7 @@
     },
     "bluetooth": {
         "format": " {status}",
-        "format-connected": " {device_alias}",
+        "format-connected": " ({num_connections})",
+        "tooltip-format-connected": "{device_alias} - {device_battery_percentage}%"
     }
 }
