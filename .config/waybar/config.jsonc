@@ -16,10 +16,6 @@
         "bluetooth",
         "memory"
     ],
-    // modules
-    "hyprland/window": {
-        "max-length": 50
-    },
     "memory": {
         "interval": 5,
         "format": "ram: {percentage}%",
@@ -66,6 +62,12 @@
     "bluetooth": {
         "format": " {status}",
         "format-connected": " ({num_connections})",
+        "tooltip": "no devices connected",
         "tooltip-format-connected": "{device_alias} - {device_battery_percentage}%"
+    },
+    "hyprland/workspaces": {
+       "persistent-workspaces": {
+             "*": 2, // 5 workspaces by default on every monitor
+       }
     }
 }
