@@ -18,7 +18,8 @@
     ],
     "memory": {
         "interval": 5,
-        "format": "ram: {percentage}%",
+        // "format": "ram: {percentage}%",
+        "format": " {percentage}%",
     },
     "backlight": {
         "format": "{icon} {percent}",
@@ -30,9 +31,15 @@
         ]
     },
     "network": {
-        "format": "<span>󰤨</span> {essid}",
-        "format-disconnected": "<span>󰤨 󱘖</span>",
-        "max-length": 15
+        "format": "<span>󰤨</span> ",
+        "format-disconnected": "<span>󰤭 </span>",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "tooltip-format": "{essid} - ({signalStrength}%)"
     },
     "battery": {
         "format": "{icon} {capacity}%",
