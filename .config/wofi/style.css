@@ -1,17 +1,25 @@
 * {
-    background-color: rgba(1, 1, 1, 0.1);
-    font-size: 1.5rem;
-};
+    font-size: 2rem;
+}
+
+;
 
 #input {
-    padding: 8px;
+    padding: 16px;
+    margin: 16px;
 }
 
 #entry {
     font-weight: bold;
-    padding: 16px;
-};
+    padding: 8px;
+}
+
+#text {
+    margin-left: 16px;
+}
+
+;
 
 #entry:selected {
-    border: solid white 1px;
+    border: solid white 5px;
 }

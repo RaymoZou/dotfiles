@@ -1,4 +1,5 @@
-width=40%
-prompt=program
+width=50%
+prompt=what's up
 show=drun
 allow_images=true
+no_actions=true
