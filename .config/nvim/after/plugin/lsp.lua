@@ -1,6 +1,18 @@
 vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function()
-        vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { buffer = true, desc = "[LSP] Format" })
+
+
+    callback = function(ev)
+        -- local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+        vim.keymap.set('n', '<leader>f', function()
+            -- add specific LSPs you want to use to format otherwise it will use all the LSPs
+            -- that are connected to the current buffer
+            local whitelist = { ruff = true, lua_ls = true }
+            vim.lsp.buf.format({
+                filter = function(client) return whitelist[client.name] == true end
+            })
+        end
+        , { buffer = true, desc = "[LSP] Format" })
         vim.keymap.set('n', '<leader>gd', require("telescope.builtin").lsp_definitions,
             { buffer = true, desc = "[LSP] Definition" })
         vim.keymap.set('n', '<leader>gr', require("telescope.builtin").lsp_references,
