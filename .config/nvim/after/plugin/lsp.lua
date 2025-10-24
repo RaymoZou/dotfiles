@@ -13,11 +13,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
             })
         end
         , { buffer = true, desc = "[LSP] Format" })
-        vim.keymap.set('n', '<leader>gd', require("telescope.builtin").lsp_definitions,
+        vim.keymap.set('n', '<leader>gd', vim.lsp.buf.type_definition,
             { buffer = true, desc = "[LSP] Definition" })
-        vim.keymap.set('n', '<leader>gr', require("telescope.builtin").lsp_references,
-            { desc = "[LSP] References" })
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename,
             { buffer = true, desc = "[LSP] Rename" })
+        vim.keymap.set('n', '<leader>ss', require("telescope.builtin").lsp_document_symbols,
+            { buffer = true, desc = "[LSP] Symbol" })
+        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action,
+            { desc = "[LSP] Code Action" })
+        vim.keymap.set('n', '<leader>gr', require("telescope.builtin").lsp_references,
+            { desc = "[LSP] References" })
     end
 })
