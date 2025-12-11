@@ -1,5 +1,6 @@
 [font]
-size = 14.0
+size = 18.0
+normal = {family="FiraCode Nerd Font Mono"}
 
 [window]
 opacity = 0.95
