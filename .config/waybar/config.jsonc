@@ -53,7 +53,7 @@
     },
     "clock": {
         "format": " {:%I:%M %p}",
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format-alt": "{:%a, %b. %d %I:%M %p}"
     },
     "wireplumber": {
         "format": "{icon} {volume}%",
