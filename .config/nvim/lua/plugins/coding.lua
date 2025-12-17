@@ -14,7 +14,10 @@ return {
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
-            keymap = { preset = 'default', },
+            keymap = {
+                preset = 'default',
+                ['<Tab>'] = { 'accept' },
+            },
             sources = {
                 default = { 'lsp', 'path', 'snippets', 'buffer' },
             },
