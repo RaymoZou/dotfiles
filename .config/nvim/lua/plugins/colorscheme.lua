@@ -32,5 +32,29 @@ return {
             lazy = false,
             priority = 1000,
         },
+        {
+            "rebelot/kanagawa.nvim",
+            name = "kanagawa",
+            lazy = false,
+            priority = 1000,
+        },
+        {
+            "rose-pine/neovim",
+            name = "rose-pine",
+            lazy = false,
+            priority = 1000,
+        },
+        {
+            "sainnhe/everforest",
+            name = "everforest",
+            lazy = false,
+            priority = 1000,
+        },
+        {
+            "sainnhe/gruvbox-material",
+            name = "gruvbox-material",
+            lazy = false,
+            priority = 1000,
+        },
     },
 }
