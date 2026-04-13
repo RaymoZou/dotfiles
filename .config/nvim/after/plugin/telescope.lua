@@ -26,7 +26,7 @@ end
 local function live_grep_git_root()
     local git_root = find_git_root()
     if git_root then
-        require('telescope.builtin').live_grep {
+        builtin.live_grep {
             search_dirs = { git_root },
         }
     end
@@ -36,10 +36,12 @@ end
 vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
 local function git_files()
-    require('telescope.builtin').find_files({ cwd = find_git_root() })
+    builtin.find_files({ cwd = find_git_root() })
 end
 
-
+local function config_files()
+    builtin.find_files({ cwd = vim.env.HOME .. "/.config" })
+end
 
 vim.keymap.set("n", "<leader>sf", git_files, { desc = 'search for git files' })
 vim.keymap.set('n', '<leader>sg', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' }) -- based on current git root OR cwd if not found
@@ -49,3 +51,4 @@ vim.keymap.set("n", "<leader>cs", function()
     builtin.colorscheme({ enable_preview = true })
 end, { desc = "[C]olor [S]chemes" })
 vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, { desc = "Recently Opened Files" })
+vim.keymap.set("n", "<leader>cfs", config_files, { desc = "[C]onfig [F]ile [S]earch" }) -- search for .config files
