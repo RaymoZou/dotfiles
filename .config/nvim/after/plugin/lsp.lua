@@ -7,7 +7,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<leader>f', function()
             -- add specific LSPs you want to use to format otherwise it will use all the LSPs
             -- that are connected to the current buffer
-            local whitelist = { ruff = true, lua_ls = true }
+            local whitelist = {
+                ruff = true, -- python
+                lua_ls = true, -- lua
+                intelephense = true, -- php
+            }
             vim.lsp.buf.format({
                 filter = function(client) return whitelist[client.name] == true end
             })
