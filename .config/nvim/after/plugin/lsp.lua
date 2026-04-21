@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 ruff = true, -- python
                 lua_ls = true, -- lua
                 intelephense = true, -- php
+                ts_ls = true, -- javascript/typescript
             }
             vim.lsp.buf.format({
                 filter = function(client) return whitelist[client.name] == true end
